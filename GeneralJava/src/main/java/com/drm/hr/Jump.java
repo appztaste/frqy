@@ -25,7 +25,8 @@ public class Jump {
       return reachable;
     }
     
-    prepare();
+    fillLookup();
+    fill(0);
     
     reachable = false;
     for(int i = 1; i <= m && !reachable; i++) {
@@ -46,15 +47,6 @@ public class Jump {
     }
     
     return res;
-  }
-  
-  static void prepare() {
-    fillLookup();
-
-    boolean res = true;
-    for(int i = 0; i < n; i += m) {
-      res = res && fill(i);
-    }
   }
   
   static boolean inRange(int i) {
@@ -79,6 +71,7 @@ public class Jump {
   }
   
   
+  @SuppressWarnings("unused")
   private static void manualInput() {
     n = 33; 
     m = 18;
