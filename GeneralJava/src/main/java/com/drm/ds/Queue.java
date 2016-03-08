@@ -8,8 +8,8 @@ package com.drm.ds;
  */
 public interface Queue<T> {
   void add(T t);
-  T remove(T t);
-  T poll(T t);
+  T remove();
+  T poll();
   void offer(T t);
   T max();
   T min();
